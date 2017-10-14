@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+ 
+<h2>List of Names</h2>
+@{ 
+    var Names = new List<string> { "Ellis", "Thomas", "Sany", "Roger"};
+
+}
+
+@foreach (var name in Names) {
+    
+    <li>@name</li>
+}
+
+<h2>Greeting</h2>
+@{ 
+    var UserName = "Ellis";
+    var Greeting = "Hello welcome to our site " + UserName;
+}
+
+    <p>@Greeting</p>
+
+
+<h2>Is it Friday yet?</h2>
+
+
+@{ 
+    var WeekDay = DateTime.Now.ToString("ddd");
+   
+    if (WeekDay == "Sat")
+    {
+        <h1>TGIF</h1>
+    } else
+    {
+        <h3>Sorry it's not Friday</h3>
+    }
+}
