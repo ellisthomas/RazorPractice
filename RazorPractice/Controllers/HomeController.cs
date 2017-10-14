@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using RazorPractice.Models;
 
 namespace RazorPractice.Controllers
 {
@@ -26,5 +27,20 @@ namespace RazorPractice.Controllers
 
             return View();
         }
+
+        public ActionResult Create()
+        {
+            ViewBag.Message = "Your create page";
+
+            return View();
+        }
+
+       [HttpPost]
+       public ActionResult Create(Album album)
+        {
+
+            return RedirectToAction("Create");
+        }
+
     }
 }
